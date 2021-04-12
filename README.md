@@ -1,13 +1,21 @@
 # pidstat
+
 mmm external/pidstat -j64
+
 adb root
+
 adb remount
+
 adb push pidstat /system/bin
+
+# pidstat 使用
 
 pidstat主要用于监控全部或指定进程占用系统资源的情况，如CPU，内存、设备IO、任务切换、线程等。pidstat首次运行时显示自系统启动开始的各项统计信息，之后运行pidstat将显示自上次运行该命令以后的统计信息。用户可以通过指定统计的次数和时间来获得所需的统计信息。
 
+
 常用参数：
 
+```C
 -C comm		#只显示那些包含字符串（可是正则表达式）comm的命令的名字
  -d			#显示I/O统计信息（须内核2.6.20及以后）
     PID			        #进程号
@@ -58,3 +66,4 @@ pidstat主要用于监控全部或指定进程占用系统资源的情况，如C
     nvcswch/s			#每秒非自愿的上下文切换
     Command			#命令
 
+```
